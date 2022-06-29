@@ -14,10 +14,19 @@ public class DatasEmJava {
 		
 		calendar.setTime(new SimpleDateFormat("dd-MM-yyyy").parse("10-03-2022"));
 		
-		calendar.add(Calendar.DAY_OF_MONTH, -5);/*adicionei 5*/
+		calendar.add(Calendar.DAY_OF_MONTH, -40);/*data de hoje mais 40 dias*/
 		
-		System.out.println(new SimpleDateFormat("dd-MM-yyyy").format(calendar.getTime()));
+		System.out.println("Somando dia do mês: " + new SimpleDateFormat("dd-MM-yyyy").format(calendar.getTime()));
 		
+		
+		calendar.add(Calendar.MONTH, 1);
+		
+		System.out.println("Somando o mês: " + new SimpleDateFormat("dd-MM-yyyy").format(calendar.getTime()));
+		
+		
+		calendar.add(Calendar.YEAR, 1);
+		
+		System.out.println("Somando o ano: " + new SimpleDateFormat("dd-MM-yyyy").format(calendar.getTime()));
 	}
 
 }
