@@ -4,6 +4,8 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.time.LocalTime;
+import java.time.format.DateTimeFormatter;
 import java.time.temporal.ChronoUnit;
 import java.util.Calendar;
 import java.util.Date;
@@ -11,19 +13,20 @@ import java.util.Date;
 public class DatasEmJava {
 	public static void main(String[] args) throws ParseException {
 		
-		Date dateInicial = new SimpleDateFormat("dd/MM/yyyy").parse("28/06/2022");
+		/*Nova API de data a partir do Java 8*/
 		
-				Calendar calendar = Calendar.getInstance();
-				
-				calendar.setTime(dateInicial);
-				
-				for(int parcela = 1; parcela <= 12; parcela++) {
-					
-					calendar.add(Calendar.MONTH, 1);
-					
-					System.out.println("Parcela número: " + parcela + " vencimento é em: " + new SimpleDateFormat("dd/MM/yyyy").format(calendar.getTime()));
-					
-				}
+		
+		LocalDate dataAtual = LocalDate.now();/*como se declara o objeto */
+		System.out.println("Data Atual: " + dataAtual.format(DateTimeFormatter.ofPattern("dd/MM/yyyy")));
+		/*como imprime e formata*/
+		
+		LocalTime horaAtual = LocalTime.now();
+		System.out.println("Hora atual: " + horaAtual.format(DateTimeFormatter.ofPattern("HH:mm:ss")));
+		
+		LocalDateTime dataAtuaHoraAtual = LocalDateTime.now();
+		System.out.println("Data e hora atual: " + dataAtuaHoraAtual.format(DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm")));
+		
+		
 		
 	}
 
