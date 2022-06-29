@@ -2,31 +2,20 @@ package modulo_datas;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.temporal.ChronoUnit;
 import java.util.Calendar;
 import java.util.Date;
 
 public class DatasEmJava {
 	public static void main(String[] args) throws ParseException {
 		
-		Calendar calendar = Calendar.getInstance();/*pega a data atual*/
 		
-		/*simular que a data vem do banco de dados ou qualquer outro lugar*/
+		long dias = ChronoUnit.DAYS.between(LocalDate.parse("2022-06-01"), LocalDate.now());/*total de dias de uma data até hoje*/
 		
-		calendar.setTime(new SimpleDateFormat("dd-MM-yyyy").parse("10-03-2022"));
+		System.out.println("Possui " + dias + " dias entre a faixa de data");
 		
-		calendar.add(Calendar.DAY_OF_MONTH, -40);/*data de hoje mais 40 dias*/
-		
-		System.out.println("Somando dia do mês: " + new SimpleDateFormat("dd-MM-yyyy").format(calendar.getTime()));
-		
-		
-		calendar.add(Calendar.MONTH, 1);
-		
-		System.out.println("Somando o mês: " + new SimpleDateFormat("dd-MM-yyyy").format(calendar.getTime()));
-		
-		
-		calendar.add(Calendar.YEAR, 1);
-		
-		System.out.println("Somando o ano: " + new SimpleDateFormat("dd-MM-yyyy").format(calendar.getTime()));
 	}
 
 }
