@@ -10,16 +10,19 @@ public class DatasEmJava {
 		
 		SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd/MM/yyyy");
 		
-		Date dataVencimentoBoleto = simpleDateFormat.parse("30/06/2022");
+		Date dataVencimentoBoleto = simpleDateFormat.parse("20/06/2022");
 		
 		Date dataAtualHoje = simpleDateFormat.parse("28/06/2022");
 		
-		if(dataVencimentoBoleto.after(dataAtualHoje)) {/*posterior, maior ou depois da data atual*/
+		//after: se data 1 é maior que a data 2
+		//before: se data 1 é menor que a data 2
+		
+		if(dataVencimentoBoleto.before(dataAtualHoje)) {/*se a data 1 é menor que a data 2*/
 			
-			System.out.println("Boleto não vencido");
+			System.out.println("Boleto está vencido - URGENTE");
 			
 		}else {
-			System.out.println("Boleto está vencido - URGENTE");
+			System.out.println("Boleto não vencido");
 		}
 	}
 
