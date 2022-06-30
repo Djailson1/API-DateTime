@@ -16,20 +16,18 @@ import java.util.Date;
 public class DatasEmJava {
 	public static void main(String[] args) throws ParseException, InterruptedException {
 		
-		LocalDate dataAntiga = LocalDate.parse("2019-10-05");
-		LocalDate dataNova = LocalDate.parse("2021-10-10");
+		LocalDate dataBase = LocalDate.parse("2019-10-05");
 		
-		System.out.println("Data antiga é maior que data nova? " + dataAntiga.isAfter(dataNova));
-		System.out.println("Data antiga é anterior que data nova? " + dataAntiga.isBefore(dataNova));
-		System.out.println("Datas são iguais? " + dataAntiga.isEqual(dataNova));
+		System.out.println("Mais 5 dias: " + (dataBase = dataBase.plusDays(5)));/*adc mais 5 dias a data passada*/
+		System.out.println("Mais 5 semanas: " + (dataBase = dataBase.plusWeeks(5)));
+		System.out.println("Mais 5 anos: " + (dataBase = dataBase.plusYears(5)));
+		System.out.println("Mais 2 meses: " + (dataBase = dataBase.plusMonths(2)));
 		
-		Period periodo = Period.between(dataAntiga, dataNova);
-		System.out.println("Quantos dias? " + periodo.getDays());
-		System.out.println("Quantos meses? " + periodo.getMonths());
-		System.out.println("Quantos anos? " + periodo.getYears());
-		System.out.println("Somente meses: " + periodo.toTotalMonths());
-		System.out.println("Período é: " + periodo.getYears() +" anos " +  periodo.getMonths() + 
-				      	   " meses " + periodo.getDays() + " e dias");
+		System.out.println("Menos 1 ano: " + (dataBase = dataBase.minusYears(1)));
+		System.out.println("Menos 1 mês: " + (dataBase = dataBase.minusMonths(1)));
+		System.out.println("Menos 20 dias: " + (dataBase = dataBase.minusDays(20)));
+		
+		
 		
 		
 	}
